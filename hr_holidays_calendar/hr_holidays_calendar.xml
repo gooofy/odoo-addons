@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_holiday_summary_calendar" model="ir.ui.view">
+            <field name="name">Holiday Summary</field>
+            <field name="model">hr.holidays.summary</field>
+            <field name="arch" type="xml">
+                <calendar string="Holiday Summary" 
+                          color="employee_id"
+                          date_start="date_from" 
+                          date_stop="date_to"
+                          quick_add="False" 
+                          avatar_model="hr.employee">
+                    <field name="name"/>
+                    <!--<field name="holiday_status_id"/>-->
+                </calendar>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="open_leaves_calendar">
+            <field name="name">Leaves Calendar</field>
+            <field name="res_model">hr.holidays.summary</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">calendar</field>
+        </record>
+
+        <menuitem name="Leaves Calendar" parent="hr_holidays.menu_open_ask_holidays" id="menu_leaves_calendar" action="open_leaves_calendar" sequence="50"/>
+
+    </data>
+</openerp>
