@@ -29,6 +29,7 @@
     'license': 'AGPL-3',
     'depends': ['hr_public_holidays', 'hr_holidays'],
     'data' : [
+        'security/ir.model.access.csv',
         'hr_holidays_calendar.xml',
         ],
     'css': [],
